@@ -1,0 +1,28 @@
+﻿@model ArtistFormModel
+
+@{
+    ViewData["Title"] = "Add Artist";
+}
+
+<div class="container">
+    <h2>@ViewData["Title"]</h2>
+    <hr class="col-4" />
+    <form method="post" asp-controller="Artist" asp-action="AddNewArtist">
+        <div class="row">
+            <div class="form-group mb-3 col-3">
+                <div class="mb-3">
+                    <label asp-for="@Model.Name" class="form-label h5">Artist Name</label>
+                    <input asp-for="@Model.Name" type="text" class="form-control" aria-required="true" />
+                    <span asp-validation-for="@Model.Name" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <button type="submit" class="btn btn-success">Add</button>
+    </form>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
+

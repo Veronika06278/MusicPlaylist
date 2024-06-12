@@ -1,0 +1,18 @@
+﻿@model ArtistModel
+
+@{
+    ViewData["Title"] = "My Artists";
+}
+
+<div class="text-center">
+    <h1>New Artists</h1>
+    <div>
+        <form method="post" asp-controller="Home" asp-action="CreateAuthor">
+            <input asp-for="ArtistName" type="text" id="authorName" placeholder="Enter text here" />
+            <input asp-for="Description" type="text" id="authorName" placeholder="Enter text here" />
+            <button type="submit" id="createAuthor">Create Author</button>
+
+        </form>
+
+    </div>
+</div>

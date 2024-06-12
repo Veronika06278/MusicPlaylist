@@ -1,24 +1,12 @@
 using Microsoft.AspNetCore.Mvc;
-using MusicPlaylist.Models;
+using MusicPlaylist.ViewModels;
 using System.Diagnostics;
 
 namespace MusicPlaylist.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-
-        public HomeController(ILogger<HomeController> logger)
-        {
-            _logger = logger;
-        }
-
         public IActionResult Index()
-        {
-            return View();
-        }
-
-        public IActionResult Privacy()
         {
             return View();
         }

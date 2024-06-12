@@ -1,10 +1,12 @@
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using MusicPlaylist.Data;
+using MusicPlaylist.Services;
+using MusicPlaylist.Services.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 
-// Add services to the container.
+
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
 builder.Services.AddDbContext<MusicPlaylistDbContext>(options =>
     options.UseSqlServer(connectionString));
@@ -13,6 +15,9 @@ builder.Services.AddDatabaseDeveloperPageExceptionFilter();
 builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
     .AddEntityFrameworkStores<MusicPlaylistDbContext>();
 builder.Services.AddControllersWithViews();
+
+// Add services to the container.
+builder.Services.AddScoped<IArtistService, ArtistService>();
 
 var app = builder.Build();
 

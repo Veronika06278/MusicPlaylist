@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations.Schema;
 using System.ComponentModel.DataAnnotations;
+using static MusicPlaylist.Constants.Constants.SongConstants;
 
 namespace MusicPlaylist.Data.Models
 {
@@ -9,15 +10,16 @@ namespace MusicPlaylist.Data.Models
         public int Id { get; set; }
 
         [Required]
-        [MaxLength(100)]
+        [MaxLength(TitleMaxLenght)]
         public string Title { get; set; } = null!;
 
-        [Required]
+        
         public string ImageUrl { get; set; } = null!;
 
-        [Required]
+        
         [ForeignKey(nameof(Artist))]
         public int ArtistId { get; set; }
+        [Required]
         public Artist Artist { get; set; } = null!;
     }
 }
