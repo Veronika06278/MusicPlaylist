@@ -6,6 +6,6 @@ namespace MusicPlaylist.Services.Interfaces
 {
     public interface ISongService
     {
-        public Task<bool> AddSongAsync(SongFormModel model)
+        public Task<bool> AddSongAsync(SongFormModel model);
     }
 }
