@@ -18,6 +18,8 @@ builder.Services.AddControllersWithViews();
 
 // Add services to the container.
 builder.Services.AddScoped<IArtistService, ArtistService>();
+builder.Services.AddScoped<ISongService, SongService>();
+
 
 var app = builder.Build();
 

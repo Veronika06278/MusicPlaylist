@@ -49,30 +49,3 @@ namespace MusicPlaylist.Controllers
         }
     }
 }
-
-
-
-
-
-
-
-
-
-
-//[HttpPost]
-//public IActionResult CreateAuthor(ArtistModel model)
-//{
-//    //using (var context = new MusicSystemDbContext())
-//    //{
-//    //    Artist artist = new Artist();
-//    //    artist.ArtistName = ;
-//    //    artist.Description = "";
-
-//    //    context.Artists.Add(artist);
-//    //    context.SaveChanges();
-//    //}
-
-//    return View();
-//    //return Ok(new { message = "Text received: " + text });
-
-//}
