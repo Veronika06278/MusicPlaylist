@@ -5,9 +5,8 @@
     ViewData["Title"] = "My Songs";
 }
 
-<form method="post" asp-controller="Home" asp-action="CreateAuthor">
-    <input asp-for="Title" type="text" id="authorName" placeholder="Enter text here" />
-    
+<form method="post" asp-controller="Home" asp-action="CreateSong">
+    <input asp-for="Title" type="text" id="authorName" placeholder="Enter text here" /> 
     <button type="submit" id="createAuthor">Create Author</button>
 
 </form>
