@@ -15,6 +15,9 @@ namespace MusicPlaylist.Data.Models
         [MaxLength(DescriptionMaxLenght)]
         public string? Description { get; set; }
 
+        [Required]
+        public string ImageUrl { get; set; } = null!;
+
         public ICollection<Song> Songs { get; set; } = new List<Song>();
     }
 }

@@ -47,5 +47,11 @@ namespace MusicPlaylist.Controllers
             //TODO: страница за грешки
             return RedirectToAction(nameof(HomeController.Error), "Home");
         }
+
+        public IActionResult All()
+        {
+            IEnumerable<ArtistViewModel> model = _artistService.GetArtists();
+            return View(model);
+        }
     }
 }

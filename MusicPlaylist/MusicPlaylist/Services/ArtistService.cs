@@ -20,7 +20,8 @@ namespace MusicPlaylist.Services
             Artist artist = new Artist
             {
                 Name = model.Name,
-                Description = model.Description
+                Description = model.Description,
+                ImageUrl=model.ImageUrl
             };
 
             await _dbcontext.AddAsync(artist);
@@ -31,6 +32,20 @@ namespace MusicPlaylist.Services
                 return true;
             }
             return false;
+        }
+
+        public IEnumerable<ArtistViewModel> GetArtists()
+        {
+            List<ArtistViewModel> result= _dbcontext.Artists
+                .Select(x => new ArtistViewModel
+                {
+                    Name = x.Name,
+                    Description = x.Description,
+                    ImageUrl=x.ImageUrl
+
+                })
+                .ToList();
+            return result;
         }
     }
 }

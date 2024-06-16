@@ -1,0 +1,21 @@
+﻿@model IEnumerable<ArtistViewModel>;
+ 
+@{
+    ViewData["Title"] = "All Artists";
+}
+ 
+<h2 class="text-center">@ViewData["Title"]</h2>
+<hr />
+ 
+<div class="text-center row">
+    @foreach (var artist in Model)
+    {
+        <div class="card col-4" style="width: 20rem;">
+            <img class="card-img-top" src="@artist.ImageUrl" alt="Artist Image">
+            <div class="card-body">
+                <h5 class="card-title">@artist.Name</h5>
+                <p class="card-text">@artist.Description</p>
+            </div>
+        </div>
+    }
+</div>

@@ -12,5 +12,8 @@ namespace MusicPlaylist.ViewModels.Artist
 
         [MaxLength(DescriptionMaxLenght)]
         public string? Description { get; set; }
+
+        [Required]
+        public string ImageUrl { get; set; } = null!;
     }
 }
