@@ -18,6 +18,30 @@
             </div>
         </div>
 
+        <div class="row">
+            <div class="form-group mb-3 col-3">
+                <div class="mb-3">
+                    <label asp-for="@Model.ImageUrl" class="form-label h5">Song Image</label>
+                    <input asp-for="@Model.ImageUrl" type="text" class="form-control" aria-required="true" />
+                    <span asp-validation-for="@Model.ImageUrl" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group mb-3 col-3">
+                <div class="form-group">
+                    <label asp-for="Artists" class="dropdown-header">Artist:</label>
+                    <select asp-for="ArtistId" class="form-control">
+                        <option value="">Artists</option>
+                        @foreach (var artist in Model.Artists)
+                        {
+                            <option value="@artist.Id">@artist.Name</option>
+                        }
+                    </select>
+                </div>
+            </div>
+
         <button type="submit" class="btn btn-success">Add</button>
     </form>
 </div>

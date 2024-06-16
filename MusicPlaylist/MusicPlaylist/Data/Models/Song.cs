@@ -12,11 +12,9 @@ namespace MusicPlaylist.Data.Models
         [Required]
         [MaxLength(TitleMaxLenght)]
         public string Title { get; set; } = null!;
-
         
-        public string ImageUrl { get; set; } = null!;
+        public string? ImageUrl { get; set; } 
 
-        
         [ForeignKey(nameof(Artist))]
         public int ArtistId { get; set; }
         [Required]

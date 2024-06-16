@@ -68,5 +68,17 @@ namespace MusicPlaylist.Services
                 .ToList();
             return result;
         }
+
+        public IEnumerable<ArtistDropDownModel> GetArtistsDropDown()
+        {
+            List<ArtistDropDownModel> result = _dbcontext.Artists
+               .Select(x => new ArtistDropDownModel
+               {
+                   Id = x.Id,
+                   Name = x.Name,
+               })
+               .ToList();
+            return result;
+        }
     }
 }

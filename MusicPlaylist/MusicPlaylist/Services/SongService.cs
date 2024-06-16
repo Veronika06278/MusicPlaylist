@@ -19,7 +19,9 @@ namespace MusicPlaylist.Services
         {
             Song song=new Song
             {
-                Title= model.Title
+                Title= model.Title,
+                ImageUrl= model.ImageUrl,
+                ArtistId= model.ArtistId,
             };
             await _dbcontext.AddAsync(song);
             int savedChangedEntitiesCount = await _dbcontext.SaveChangesAsync();
