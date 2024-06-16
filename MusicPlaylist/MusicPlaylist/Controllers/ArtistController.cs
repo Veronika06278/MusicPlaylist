@@ -41,8 +41,8 @@ namespace MusicPlaylist.Controllers
             bool isAdded = await _artistService.AddAsync(model);
             if (isAdded)
             {
-                //TODO: да пренасочва към страница със всички артисти
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                
+                return RedirectToAction(nameof(ArtistController.All), "Artist");
             }
             //TODO: страница за грешки
             return RedirectToAction(nameof(HomeController.Error), "Home");
@@ -51,6 +51,16 @@ namespace MusicPlaylist.Controllers
         public IActionResult All()
         {
             IEnumerable<ArtistViewModel> model = _artistService.GetArtists();
+            return View(model);
+        }
+
+        public IActionResult Details(int id) 
+        { 
+            ArtistDetailsModel? model = _artistService.GetArtistDetails(id);
+            if(model == null)
+            {
+                return RedirectToAction(nameof(ArtistController.All), "Artist");
+            }
             return View(model);
         }
     }

@@ -15,6 +15,7 @@
             <div class="card-body">
                 <h5 class="card-title">@artist.Name</h5>
                 <p class="card-text">@artist.Description</p>
+                <a class="btn btn-info" asp-controller="Artist" asp-action="Details" asp-route-id="@artist.Id">Details</a>
             </div>
         </div>
     }

@@ -3,6 +3,7 @@ using MusicPlaylist.Data;
 using MusicPlaylist.Data.Models;
 using MusicPlaylist.Services.Interfaces;
 using MusicPlaylist.ViewModels.Artist;
+using MusicPlaylist.ViewModels.Song;
 
 namespace MusicPlaylist.Services
 {
@@ -34,11 +35,31 @@ namespace MusicPlaylist.Services
             return false;
         }
 
+        public ArtistDetailsModel? GetArtistDetails(int id)
+        {
+            var result = _dbcontext.Artists
+                .Where(a => a.Id == id)
+                .Select(a => new ArtistDetailsModel
+                {
+                    Name = a.Name,
+                    Description = a.Description,
+                    ImageUrl = a.ImageUrl,
+                    Songs = a.Songs.Select(s => new SongViewModel
+                    {
+                        Title = s.Title,
+                    })
+                    .ToList()
+                })
+                .FirstOrDefault();
+            return result;
+        }
+
         public IEnumerable<ArtistViewModel> GetArtists()
         {
             List<ArtistViewModel> result= _dbcontext.Artists
                 .Select(x => new ArtistViewModel
                 {
+                    Id = x.Id,
                     Name = x.Name,
                     Description = x.Description,
                     ImageUrl=x.ImageUrl

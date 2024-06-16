@@ -1,0 +1,24 @@
+﻿@model ArtistDetailsModel
+ 
+@{
+    ViewData["Title"] = "Artist Details";
+}
+ 
+<h2 class="text-center">@ViewData["Title"]</h2>
+<hr />
+ 
+<div class="card text-center mx-auto" style="width: 25rem;">
+    <img class="card-img-top" src="@Model.ImageUrl" alt="Artist Image">
+    <div class="card-body">
+        <h5 class="card-title">@Model.Name</h5>
+        <p class="card-text">@Model.Description</p>
+        <hr />
+        <h5 class="card-body">Songs:</h5>
+        <ul class="list-group">
+            @foreach (var song in Model.Songs)
+            {
+                <li class="list-group-item">@song.Title</li>
+            }
+        </ul>
+    </div>
+</div>
