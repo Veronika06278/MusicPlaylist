@@ -1,9 +1,15 @@
-﻿namespace MusicPlaylist.ViewModels.Song
+﻿using MusicPlaylist.ViewModels.Artist;
+
+namespace MusicPlaylist.ViewModels.Song
 {
     public class SongViewModel
     {
-        public string Title { get; set; }
+        public int Id { get; set; }
+        public string Title { get; set; } = null!;
 
+        
+
+        public string? ImageUrl { get; set; } 
         
     }
 }

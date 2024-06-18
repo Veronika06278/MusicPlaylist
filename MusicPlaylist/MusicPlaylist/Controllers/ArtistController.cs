@@ -63,5 +63,10 @@ namespace MusicPlaylist.Controllers
             }
             return View(model);
         }
+
+        public IActionResult Edit(int id)
+        {
+            ArtistEditModel? model = _artistService.EditArtist(id);
+        }
     }
 }

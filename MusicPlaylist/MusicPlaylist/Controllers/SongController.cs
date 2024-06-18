@@ -42,5 +42,16 @@ namespace MusicPlaylist.Controllers
             }
             return RedirectToAction(nameof(HomeController.Error), "Home");
         }
+
+        public IActionResult All()
+        {
+            IEnumerable<SongViewModel> model = _songService.GetSong();
+            return View(model);
+        }
+
+        public IActionResult Delete(int id)
+        {
+            
+        }
     }
 }

@@ -1,0 +1,20 @@
+﻿@model IEnumerable<SongViewModel>
+
+@{
+    ViewData["Title"] = "All Songs";
+}
+
+<h2 class="text-center">@ViewData["Title"]</h2>
+<hr />
+
+<div class="text-center row">
+    @foreach (var song in Model)
+    {
+        <div class="card col-4" style="width: 20rem;">
+            <img class="card-img-top" src="@song.ImageUrl" alt="Song Image">
+            <div class="card-body">
+                <h5 class="card-title">@song.Title</h5>
+            </div>
+        </div>
+    }
+</div>

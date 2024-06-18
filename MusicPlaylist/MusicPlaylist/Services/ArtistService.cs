@@ -35,6 +35,11 @@ namespace MusicPlaylist.Services
             return false;
         }
 
+        public ArtistEditModel? EditArtist(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public ArtistDetailsModel? GetArtistDetails(int id)
         {
             var result = _dbcontext.Artists

@@ -31,5 +31,18 @@ namespace MusicPlaylist.Services
             }
             return false;
         }
+
+        public IEnumerable<SongViewModel> GetSong()
+        {
+            List<SongViewModel> result = _dbcontext.Songs
+                .Select(x => new SongViewModel
+                {
+                    Id = x.Id,
+                    Title = x.Title,
+                    ImageUrl = x.ImageUrl
+                })
+                .ToList();
+            return result;
+        }
     }
 }
