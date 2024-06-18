@@ -38,7 +38,7 @@ namespace MusicPlaylist.Controllers
             bool isAdded=await _songService.AddSongAsync(model);
             if (isAdded)
             {
-                return RedirectToAction(nameof(HomeController.Index), "Home");
+                return RedirectToAction(nameof(ArtistController.All), "Song");
             }
             return RedirectToAction(nameof(HomeController.Error), "Home");
         }
@@ -49,9 +49,6 @@ namespace MusicPlaylist.Controllers
             return View(model);
         }
 
-        public IActionResult Delete(int id)
-        {
-            
-        }
+        
     }
 }

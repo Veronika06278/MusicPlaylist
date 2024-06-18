@@ -10,6 +10,6 @@ namespace MusicPlaylist.Services.Interfaces
         public Task<bool> AddAsync(ArtistFormModel model);
         public ArtistDetailsModel? GetArtistDetails(int id);
         IEnumerable<ArtistDropDownModel> GetArtistsDropDown();
-        ArtistEditModel? EditArtist(int id);
+        
     }
 }
